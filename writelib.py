@@ -1,19 +1,26 @@
 import os
 import time
+global consolas
 consolas = ''
 
 # I made my shitty code into a "library" epic awesome
 # Welcome to WriteLib - @literallypiedpiper on Discord
 
+def conspartclear():
+    os.system("clear")
 
-def clear():
+def consclear():
     global consolas
     consolas = ""
-    os.system("clear")
+    conspartclear()
 
 def conswrite(string=""):
     global consolas
     consolas = string
+
+def consprint():
+    global consolas
+    print(consolas)
 
 def write(string="Sample Text", delay=0.05, sleepafter=0, noconsolasnewline=False):
     # Makes the variable where it stores type() output global, then splits the characters of the string variable into
@@ -28,7 +35,7 @@ def write(string="Sample Text", delay=0.05, sleepafter=0, noconsolasnewline=Fals
     while i <= string_length:
         yo = yo + stringlist[i]
         i += 1
-        clear()
+        conspartclear()
         print(consolas + yo + "█")
         time.sleep(delay)
     # If the new line parameter is True, then no newline
